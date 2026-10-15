@@ -26,9 +26,9 @@ export default function Hero() {
     const vh = window.innerHeight;
     const q = still ? 0.09 : p;
     const s = sstep(0.0, 0.14, q);
-    const fade = still ? 1 : 1 - sstep(0.14, 0.2, q);
-    if (top.current) { top.current.style.transform = `translateY(${(-s * 0.4 * vh).toFixed(1)}px)`; top.current.style.opacity = String(fade); }
-    if (bot.current) { bot.current.style.transform = `translateY(${(-s * 0.4 * vh).toFixed(1)}px)`; bot.current.style.opacity = String(fade); }
+    const fade = still ? 1 : 1 - sstep(0.85, 1, s); // fully gone before the lines reach the top HUD
+    if (top.current) { top.current.style.transform = `translateY(${(-s * 0.21 * vh).toFixed(1)}px)`; top.current.style.opacity = String(fade); }
+    if (bot.current) { bot.current.style.transform = `translateY(${(-s * 0.21 * vh).toFixed(1)}px)`; bot.current.style.opacity = String(fade); }
     if (hookEl.current) hookEl.current.style.opacity = String(still ? 1 : 1 - sstep(0.0, 0.03, p));
     if (hint.current) hint.current.style.opacity = String(still ? 0 : 1 - sstep(0.0, 0.03, p));
     let i = 0;
@@ -69,7 +69,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="top" data-record-time="9" data-record-align="bottom" data-record-hold="1.35" data-record-label="hero" className="relative" style={{ height: `${Math.round(W * PX + 900 + HOLD)}px` }}>
+    <section id="top" data-record-time="9" data-record-align="bottom" data-record-hold="0.5" data-record-label="hero" className="relative" style={{ height: `${Math.round(W * PX + 900 + HOLD)}px` }}>
       <div ref={stage} className="sticky top-0 h-screen overflow-hidden bg-bg">
         <div ref={par} className="absolute inset-0" style={{ transform: "scale(1.035)" }}>
           <FrameScrub segs={SEGS} clipOrder={V} stillAt={STILL_AT} hold={HOLD} snapJoins={false} onProgress={onProgress} />

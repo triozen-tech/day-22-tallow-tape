@@ -48,7 +48,7 @@ export default function Footer() {
   }, [stat]);
 
   return (
-    <footer ref={ref} data-record-time="2.0" data-record-align="bottom" data-record-hold="1.5" data-record-label="footer" className="pl-rail relative h-screen overflow-hidden border-t border-line bg-bg">
+    <footer ref={ref} data-record-time="2.0" data-record-align="bottom" data-record-hold="0.8" data-record-label="footer" className="pl-rail relative h-screen overflow-hidden border-t border-line bg-bg">
       <div className="flex h-[calc(100vh-72px)] flex-col justify-center overflow-hidden">
         {ROWS.map((r, i) => (
           <div key={i} className="overflow-hidden">

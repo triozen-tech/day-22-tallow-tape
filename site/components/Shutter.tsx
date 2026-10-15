@@ -52,7 +52,19 @@ export default function Shutter() {
     return () => cancelAnimationFrame(raf);
   }, []);
 
-  if (gone) return null;
+  // ?record=1 only: keep a bare data-loader marker until 3.2 s from page load so the record clock (and the scroll) starts then,
+  // leaving the hook line on a still hero from 1.2 s to 3.2 s. Normal visitors never see this.
+  const [hold, setHold] = useState(false);
+  useEffect(() => {
+    if (!gone || !new URLSearchParams(window.location.search).has("record")) return;
+    const left = 3200 - performance.now();
+    if (left <= 0) return;
+    setHold(true);
+    const t = setTimeout(() => setHold(false), left);
+    return () => clearTimeout(t);
+  }, [gone]);
+
+  if (gone) return hold ? <div data-loader hidden aria-hidden /> : null;
 
   const content = (
     <div className="flex h-full w-[100vw] flex-col items-center justify-center" style={{ paddingLeft: "var(--rail)" }}>
