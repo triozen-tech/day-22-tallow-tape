@@ -26,7 +26,7 @@ export default function Wipe() {
     if (grp.current) grp.current.style.opacity = String(1 - sstep(0.82, 0.98, q));
   }, []);
   return (
-    <section ref={ref} aria-hidden data-record-time="1.6" data-record-label="wipe" className="relative bg-bg" style={{ height: stat ? "46vh" : "190vh" }}>
+    <section ref={ref} aria-hidden data-record-time="1.2" data-record-label="wipe" className="relative bg-bg" style={{ height: stat ? "46vh" : "190vh" }}>
       <div className="sticky top-0 flex h-screen items-center justify-center overflow-hidden" style={{ height: stat ? "46vh" : "100vh" }}>
         <div ref={grp} className="w-[160vw] shrink-0 will-change-transform" style={{ opacity: 1 }}>
           {Array.from({ length: ROWS }, (_, i) => (

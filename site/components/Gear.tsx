@@ -20,7 +20,7 @@ export default function Gear() {
   }, []);
   const demo = new Set([1, 2, 6]);
   return (
-    <section id="gear" data-record-time="2" data-record-hold="3.4" data-record-align="center" data-record-label="gear" className="pl-rail bg-bg">
+    <section id="gear" data-record-time="1.6" data-record-hold="2.8" data-record-align="center" data-record-label="gear" className="pl-rail bg-bg">
       <div className="flex items-end justify-between px-12 pb-6 pt-10">
         <h2 className="font-display text-[130px] leading-[0.86] text-fg">The gear.</h2>
         <div className="mono cap pb-3 text-muted">18 pieces · 8 shown · hover any</div>

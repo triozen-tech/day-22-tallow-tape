@@ -47,7 +47,7 @@ export default function Hero() {
     if (!el) return;
     if (prefersReducedMotion()) { el.style.setProperty("--w", "100%"); return; }
     el.style.setProperty("--w", "0%");
-    return onSiteReady(() => { gsap.to(el, { "--w": "100%", duration: 2, ease: "none", delay: 0.2 }); });
+    return onSiteReady(() => { gsap.to(el, { "--w": "100%", duration: 0.9, ease: "none", delay: 0 }); });
   }, []);
 
   // pointer nudge: the picture leans a few px toward the mouse

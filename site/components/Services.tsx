@@ -24,7 +24,7 @@ export default function Services() {
     });
   }, []);
   return (
-    <section ref={ref} id="services" data-record-time="2" data-record-hold="1.2" data-record-align="center" data-record-label="services" className="pl-rail relative bg-bg">
+    <section ref={ref} id="services" data-record-time="1.6" data-record-hold="0.8" data-record-align="center" data-record-label="services" className="pl-rail relative bg-bg">
       <div className="grid grid-cols-[400px_1fr] border-b border-line">
         <div className="relative border-r border-line px-12 py-14">
           <div className="mono cap text-muted">What we do</div>

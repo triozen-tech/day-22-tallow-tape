@@ -10,7 +10,7 @@ const BARS = bars(32, 7);
 export default function Rooms() {
   const [open, setOpen] = useState(0);
   return (
-    <section id="rooms" data-record-time="2" data-record-hold="2.4" data-record-align="center" data-record-label="rooms" className="pl-rail bg-bg">
+    <section id="rooms" data-record-time="1.6" data-record-hold="2.0" data-record-align="center" data-record-label="rooms" className="pl-rail bg-bg">
       <div className="mono cap flex items-center justify-between px-12 py-5 text-muted"><span>Rooms · 3</span><span>Hover a room</span></div>
       <div className="flex h-[78vh] border-y border-line" onMouseLeave={() => setOpen(0)}>
         {rooms.map((r, i) => (

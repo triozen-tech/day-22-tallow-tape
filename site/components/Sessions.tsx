@@ -52,7 +52,7 @@ export default function Sessions() {
   useEffect(() => { waves.current.forEach((w, k) => w?.classList.toggle("live", k === active)); }, [active]);
 
   return (
-    <section ref={ref} id="sessions" data-record-time="4.6" data-record-align="bottom" data-record-hold="1.8" data-record-label="sessions" className="pl-rail relative bg-bg" style={{ height: stat ? "100vh" : "240vh" }}>
+    <section ref={ref} id="sessions" data-record-time="4.0" data-record-align="bottom" data-record-hold="1.2" data-record-label="sessions" className="pl-rail relative bg-bg" style={{ height: stat ? "100vh" : "240vh" }}>
       <div className="sticky top-0 grid h-screen grid-cols-[1fr_620px] items-center overflow-hidden border-t border-line">
         <div className="flex h-full items-center justify-center px-8">
           <svg viewBox="0 0 700 640" className="h-[82vh] max-h-[760px] w-full" role="img" aria-label="Record player">

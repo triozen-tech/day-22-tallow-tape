@@ -53,7 +53,7 @@ export default function Booking() {
   const shown = phase === "done" ? run.current.last : t;
 
   return (
-    <section id="book" data-record-time="1.8" data-record-hold="4.2" data-record-align="center" data-record-label="booking" className="pl-rail border-t border-line bg-bg">
+    <section id="book" data-record-time="1.4" data-record-hold="3.4" data-record-align="center" data-record-label="booking" className="pl-rail border-t border-line bg-bg">
       <div className="grid min-h-screen grid-cols-[1fr_700px] items-center gap-10 px-12">
         <div>
           <div className="mono cap text-muted">Book a session</div>

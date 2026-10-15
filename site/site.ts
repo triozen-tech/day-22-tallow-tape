@@ -7,7 +7,7 @@ export const meta: SiteMeta = {
   loaderText: "TALLOW & TAPE",
   loader: false, // site/components/Shutter.tsx is the loader (I29)
   cursor: true,
-  record: { duration: 36 },
+  record: { duration: 34 },
 };
 
 export const theme: Theme = {

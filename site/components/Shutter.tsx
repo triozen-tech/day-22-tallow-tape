@@ -32,14 +32,14 @@ export default function Shutter() {
         .timeline()
         .to(left.current, { xPercent: -100, duration: 1.0, ease: "power4.inOut" }, 0)
         .to(right.current, { xPercent: 100, duration: 1.0, ease: "power4.inOut" }, 0)
-        .add(() => loading.markFinished(), 0.45)
+        .add(() => loading.markFinished(), 0.15)
         .add(() => setGone(true), 1.05);
     };
     const tick = () => {
       if (exiting) return;
       const el = (performance.now() - t0) / 1000;
       const real = el > 7 ? 1 : Math.min(1, clipProgress(V[0]) / 0.3);
-      const shown = Math.min(real, el / 1.1);
+      const shown = Math.min(real, el / 0.8);
       const txt = String(Math.round(shown * 100)).padStart(3, "0");
       numbers().forEach((n) => (n.textContent = txt));
       bars().forEach((b) => (b.style.transform = `scaleX(${shown})`));
