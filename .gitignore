@@ -50,14 +50,8 @@ renders/
 refs/
 .triozen-ref-browser/
 
-# template repo: skip raw media, frame folders and big videos (keep the .gitkeep placeholders)
-raw/*
-!raw/.gitkeep
+# day repo: raw/, frames, images and videos ARE tracked (CLAUDE.md); only originals stay local
 raw-orig/
-public/frames/*
-!public/frames/.gitkeep
-*.mp4
-*.webm
 .cache/
 
 # originals before clean-mark / audio strip (local only)
