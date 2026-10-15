@@ -3,7 +3,6 @@
 import { useEffect, useRef } from "react";
 import FrameScrub from "@/components/video/FrameScrub";
 import { gsap, prefersReducedMotion } from "@/lib/gsap";
-import { onSiteReady } from "@/lib/loading";
 import { CLIP_AT, PX, SEGS, STILL_AT, V, W } from "../clips";
 import { heroLabels, hook } from "../content";
 import { bars, sstep } from "./hooks";
@@ -41,13 +40,16 @@ export default function Hero() {
     }
   };
 
-  // hook line: a linear clip sweep with a block caret riding its edge, in 2 s once the shutter has opened
+  // hook line: a linear clip sweep with a block caret riding its edge, as the shutter seam opens (shutter:open)
   useEffect(() => {
     const el = hookEl.current;
     if (!el) return;
     if (prefersReducedMotion()) { el.style.setProperty("--w", "100%"); return; }
     el.style.setProperty("--w", "0%");
-    return onSiteReady(() => { gsap.to(el, { "--w": "100%", duration: 0.9, ease: "none", delay: 0 }); });
+    const run = () => { gsap.to(el, { "--w": "100%", duration: 0.5, ease: "none" }); };
+    if ((window as unknown as { __shutterOpen?: boolean }).__shutterOpen) { run(); return; }
+    window.addEventListener("shutter:open", run, { once: true });
+    return () => window.removeEventListener("shutter:open", run);
   }, []);
 
   // pointer nudge: the picture leans a few px toward the mouse
@@ -67,7 +69,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="top" data-record-time="9" data-record-align="bottom" data-record-hold="0.4" data-record-label="hero" className="relative" style={{ height: `${Math.round(W * PX + 900 + HOLD)}px` }}>
+    <section id="top" data-record-time="9" data-record-align="bottom" data-record-hold="0.85" data-record-label="hero" className="relative" style={{ height: `${Math.round(W * PX + 900 + HOLD)}px` }}>
       <div ref={stage} className="sticky top-0 h-screen overflow-hidden bg-bg">
         <div ref={par} className="absolute inset-0" style={{ transform: "scale(1.035)" }}>
           <FrameScrub segs={SEGS} clipOrder={V} stillAt={STILL_AT} hold={HOLD} snapJoins={false} onProgress={onProgress} />

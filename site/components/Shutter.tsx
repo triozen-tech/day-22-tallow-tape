@@ -17,6 +17,7 @@ export default function Shutter() {
   useEffect(() => {
     if (prefersReducedMotion()) {
       setGone(true);
+      (window as unknown as { __shutterOpen?: boolean }).__shutterOpen = true;
       loading.markFinished();
       return;
     }
@@ -30,16 +31,17 @@ export default function Shutter() {
       exiting = true;
       gsap
         .timeline()
-        .to(left.current, { xPercent: -100, duration: 1.0, ease: "power4.inOut" }, 0)
-        .to(right.current, { xPercent: 100, duration: 1.0, ease: "power4.inOut" }, 0)
+        .to(left.current, { xPercent: -100, duration: 0.8, ease: "power4.inOut" }, 0)
+        .to(right.current, { xPercent: 100, duration: 0.8, ease: "power4.inOut" }, 0)
+        .add(() => { window.dispatchEvent(new Event("shutter:open")); (window as unknown as { __shutterOpen?: boolean }).__shutterOpen = true; }, 0.1)
         .add(() => loading.markFinished(), 0.15)
-        .add(() => setGone(true), 1.05);
+        .add(() => setGone(true), 0.85);
     };
     const tick = () => {
       if (exiting) return;
       const el = (performance.now() - t0) / 1000;
       const real = el > 7 ? 1 : Math.min(1, clipProgress(V[0]) / 0.3);
-      const shown = Math.min(real, el / 0.8);
+      const shown = Math.min(real, el / 0.6);
       const txt = String(Math.round(shown * 100)).padStart(3, "0");
       numbers().forEach((n) => (n.textContent = txt));
       bars().forEach((b) => (b.style.transform = `scaleX(${shown})`));
