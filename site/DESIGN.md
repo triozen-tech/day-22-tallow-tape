@@ -37,6 +37,18 @@ Every motion is a pure function of scroll position (any speed, forward and back)
 
 Transitions: X34 kinetic type wipe (hero → rooms), X96 not used. Only one seam change plus the film joins.
 
+## Round 1 build notes (as built)
+
+- **Hero chain** V1>V2>V3>V4>V5 (`site/clips.ts`, `lib/chain.ts` + `FrameScrub`): 192 + 192 + 192 + 168 + 134 frames = 878 units at 3.2 px per unit. Joins at K2 (unit 192), K3 (384), K4 (576), K5 (744); default crossfade 8 units (~0.3 s).
+- **V4 ends at 6.96 s** (frame 167 is the first ghosting frame of the double-exposure dissolve; V4 is never played through it). **V5 starts at 2.38 s** (best match to V4's last frame; its first 2.38 s, the door opening, is dropped). That join fades over 12 units (~0.5 s).
+- **V3** plays whole (its first 2.4 s is fast movement, not a cut).
+- **Static** (`?static=1`): one still, K3 (V3 frame 4.5). **Record**: ~36 s whole page.
+- **Rooms** (GL09): control room K1, live room K4, vocal booth K6.
+- **Gear G1–G8**: G2 labelled "Vintage mic"; G8 cropped toward the centre; years and prices labelled "sample".
+- **Booking mic is simulated**: hold = animated ring, counter and waveform only; a tap runs a 3 s demo take; no `getUserMedia`, no permission prompt.
+- **Hook line**: "Studios: this is your website." (M134 typed wipe under the title).
+- Engine fix found on this build: `FrameScrub` now restarts any layer's clip that was dropped while far away (jumping back from the end of the hero no longer leaves a blank canvas).
+
 ## Reel time table (total 37.2 s)
 
 Loader 1.2 · Hero 9.0 (five clips, hook visible by 2.0 s) · Rooms 4.0 (1 hover stop 1.5 s) · Services 3.5 · Gear 5.0 (3 hover stops) · Sessions 6.0 (record sleeve slide + needle) · Booking 5.0 (hold + tick 2.5 s) · Footer 3.5. `meta.record.duration` ≈ 36. Hand-scrolled in practice; every part works at any speed.

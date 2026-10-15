@@ -1,2 +1,2 @@
-// Fonts for THIS site: Round 1 installs the chosen pair (npm i @fontsource-variable/<name>) and imports it here.
-export {};
+import "@fontsource-variable/league-gothic";
+import "@fontsource-variable/jetbrains-mono";

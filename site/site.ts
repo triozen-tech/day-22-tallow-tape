@@ -1,26 +1,25 @@
 import type { SiteMeta, Theme } from "@/lib/site";
 
-// Placeholder: a new day starts here. Round 0 writes site/DESIGN.md, Round 1 rewrites this file for the brand.
-
 export const meta: SiteMeta = {
-  name: "Showreel Kit",
-  title: "Showreel Kit — new site",
-  description: "Blank starting point for today's showcase site.",
-  loaderText: "Kit",
-  loader: true,
+  name: "Tallow & Tape",
+  title: "Tallow & Tape — recording + rehearsal studio (concept)",
+  description: "A recording, mixing and rehearsal studio with three rooms and a lot of warm light. Concept website by Triozen Tech.",
+  loaderText: "TALLOW & TAPE",
+  loader: false, // site/components/Shutter.tsx is the loader (I29)
   cursor: true,
-  record: { duration: 30 },
+  record: { duration: 36 },
 };
 
 export const theme: Theme = {
-  bg: "#0e0e0f",
-  surface: "#18181a",
-  text: "#f2f2f0",
-  muted: "#9a9a96",
-  accent: "#f2f2f0",
-  accentText: "#0e0e0f",
-  line: "#2a2a2c",
-  fontDisplay: "system-ui, sans-serif",
-  fontBody: "system-ui, sans-serif",
+  bg: "#0e0a09",
+  surface: "#17100e",
+  text: "#eadbc0",
+  muted: "#a39580",
+  accent: "#d4432b",
+  accentText: "#0e0a09",
+  line: "#3a2e27",
+  fontDisplay: "'League Gothic Variable', 'League Gothic', Impact, sans-serif",
+  fontBody: "'JetBrains Mono Variable', ui-monospace, monospace",
   radius: 0,
+  uppercaseHeadings: true,
 };
