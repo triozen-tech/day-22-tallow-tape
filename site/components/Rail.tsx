@@ -31,16 +31,16 @@ export default function Rail() {
     <nav className="fixed bottom-0 left-0 top-0 z-50 flex flex-col items-center justify-between border-r border-line bg-bg py-5" style={{ width: "var(--rail)" }}>
       <div className="flex flex-col items-center gap-2">
         <span className="rec-dot" />
-        <span className="mono cap text-[9px] text-muted">REC</span>
+        <span className="mono cap text-[10px] font-bold text-fg">REC</span>
       </div>
       <div className="flex flex-col items-center gap-7">
         {nav.map((n) => (
-          <button key={n.id} onClick={() => go(n.id)} data-cursor="Go" className={`rail-link mono cap cursor-pointer text-fg ${on === n.id ? "on" : ""}`}>
+          <button key={n.id} onClick={() => go(n.id)} data-cursor="Go" className={`rail-link mono cap cursor-pointer text-[11px] font-bold text-fg ${on === n.id ? "on" : ""}`}>
             <span className="rail-label"><span className="roll"><span>{n.label}</span><span aria-hidden>{n.label}</span></span></span>
           </button>
         ))}
       </div>
-      <button onClick={() => window.scrollTo({ top: 0 })} className="rail-label mono cap cursor-pointer text-[10px] text-muted">Tallow &amp; Tape</button>
+      <button onClick={() => window.scrollTo({ top: 0 })} className="rail-label mono cap cursor-pointer text-[11px] font-bold text-fg">Tallow &amp; Tape</button>
     </nav>
   );
 }

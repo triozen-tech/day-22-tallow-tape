@@ -80,15 +80,17 @@ export default function Hero() {
           <span>Open 10:00 – 22:00</span>
         </div>
 
-        <div ref={top} className="pointer-events-none absolute left-[88px] right-12 bottom-1/2 will-change-transform">
-          <div className="font-display text-[min(17vw,27vh)] leading-[0.86] text-fg">Studios <span className="text-accent">sound</span></div>
+        <div className="pointer-events-none absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(14,10,9,0.4) 0%, rgba(14,10,9,0.4) 48%, rgba(14,10,9,0) 78%)", maskImage: "linear-gradient(180deg, transparent 12%, #000 30%, #000 92%, transparent 100%)", WebkitMaskImage: "linear-gradient(180deg, transparent 12%, #000 30%, #000 92%, transparent 100%)" }} />
+
+        <div ref={top} className="pointer-events-none absolute left-[88px] right-12 bottom-[calc(50%+44px)] will-change-transform">
+          <div className="font-display text-[min(13.6vw,21.6vh)] leading-[0.86] text-fg">Studios <span className="text-accent">sound</span></div>
         </div>
-        <div ref={bot} className="pointer-events-none absolute left-[88px] right-12 top-1/2 will-change-transform">
-          <div className="font-display text-[min(17vw,27vh)] leading-[0.86] text-fg">like this.</div>
+        <div ref={bot} className="pointer-events-none absolute left-[88px] right-12 top-[calc(50%-26px)] will-change-transform">
+          <div className="font-display text-[min(13.6vw,21.6vh)] leading-[0.86] text-fg">like this.</div>
         </div>
 
-        <div ref={hookEl} className="mono absolute bottom-[16vh] left-[88px] inline-block whitespace-nowrap text-[26px] text-fg" style={{ ["--w" as string]: "0%" }}>
-          <span className="block" style={{ clipPath: "inset(0 calc(100% - var(--w)) 0 0)" }}>{hook}</span>
+        <div ref={hookEl} className="mono absolute bottom-[16vh] left-[88px] inline-block whitespace-nowrap text-[42px] leading-[1.35] text-fg" style={{ ["--w" as string]: "0%", color: "#eadbc0" }}>
+          <span className="block" style={{ clipPath: "inset(0 calc(100% - var(--w)) 0 0)", borderBottom: "3px solid var(--accent)", paddingBottom: 4, textShadow: "0 2px 14px rgba(14,10,9,0.9)" }}>{hook}</span>
           <span className="caret absolute top-0 h-full w-[13px] bg-lamp" style={{ left: "var(--w)", background: "var(--lamp)" }} />
         </div>
 
