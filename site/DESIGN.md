@@ -40,7 +40,7 @@ Transitions: X34 kinetic type wipe (hero → rooms), X96 not used. Only one seam
 ## Round 1 build notes (as built)
 
 - **Hero chain** V1>V2>V3>V4>V5 (`site/clips.ts`, `lib/chain.ts` + `FrameScrub`): 192 + 192 + 192 + 168 + 134 frames = 878 units at 3.2 px per unit. Joins at K2 (unit 192), K3 (384), K4 (576), K5 (744); default crossfade 8 units (~0.3 s).
-- **V4 ends at 6.96 s** (frame 167 is the first ghosting frame of the double-exposure dissolve; V4 is never played through it). **V5 starts at 2.38 s** (best match to V4's last frame; its first 2.38 s, the door opening, is dropped). That join fades over 12 units (~0.5 s).
+- **V4 ends at 6.96 s** (frame 167 is the first ghosting frame of the double-exposure dissolve; V4 is never played through it). **V5 starts at 2.38 s** (best match to V4's last frame; its first 2.38 s, the door opening, is dropped). That join fades over 12 units (~0.5 s crossfade; at the exact join both clips show at 50%, identical at slow, normal and fast scroll, forward and back).
 - **V3** plays whole (its first 2.4 s is fast movement, not a cut).
 - **Static** (`?static=1`): one still, K3 (V3 frame 4.5). **Record**: ~36 s whole page.
 - **Rooms** (GL09): control room K1, live room K4, vocal booth K6.
@@ -49,9 +49,9 @@ Transitions: X34 kinetic type wipe (hero → rooms), X96 not used. Only one seam
 - **Hook line**: "Studios: this is your website." (M134 typed wipe under the title).
 - Engine fix found on this build: `FrameScrub` now restarts any layer's clip that was dropped while far away (jumping back from the end of the hero no longer leaves a blank canvas).
 
-## Reel time table (total 37.2 s)
+## Reel time table (total about 36.6 s)
 
-Loader 1.2 · Hero 9.0 (five clips, hook visible by 2.0 s) · Rooms 4.0 (1 hover stop 1.5 s) · Services 3.5 · Gear 5.0 (3 hover stops) · Sessions 6.0 (record sleeve slide + needle) · Booking 5.0 (hold + tick 2.5 s) · Footer 3.5. `meta.record.duration` ≈ 36. Hand-scrolled in practice; every part works at any speed.
+Loader about 2.85 s (shutter) · Hero 9.4 (five clips, hook fully visible at 1.6 s from page load) · Wipe 1.2 · Rooms 1.6 + 2.0 hold (1 hover stop) · Services 1.6 + 0.8 · Gear 1.6 + 2.8 (3 hover stops) · Sessions 4.0 + 1.2 (record sleeve slide + needle) · Booking 1.4 + 3.4 (hold + tick) · Footer 2.0 + 0.8. `meta.record.duration` = 34. Measured: record clock 33.8 s after the loader, last scroll move at 35.85 s, page ends at about 36.6 s. Hand-scrolled in practice; every part works at any speed.
 
 ## Clip table (video-first)
 
