@@ -69,7 +69,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="top" data-record-time="9" data-record-align="bottom" data-record-hold="0.85" data-record-label="hero" className="relative" style={{ height: `${Math.round(W * PX + 900 + HOLD)}px` }}>
+    <section id="top" data-record-time="9" data-record-align="bottom" data-record-hold="1.35" data-record-label="hero" className="relative" style={{ height: `${Math.round(W * PX + 900 + HOLD)}px` }}>
       <div ref={stage} className="sticky top-0 h-screen overflow-hidden bg-bg">
         <div ref={par} className="absolute inset-0" style={{ transform: "scale(1.035)" }}>
           <FrameScrub segs={SEGS} clipOrder={V} stillAt={STILL_AT} hold={HOLD} snapJoins={false} onProgress={onProgress} />

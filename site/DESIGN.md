@@ -49,9 +49,9 @@ Transitions: X34 kinetic type wipe (hero → rooms), X96 not used. Only one seam
 - **Hook line**: "Studios: this is your website." (M134 typed wipe under the title).
 - Engine fix found on this build: `FrameScrub` now restarts any layer's clip that was dropped while far away (jumping back from the end of the hero no longer leaves a blank canvas).
 
-## Reel time table (total about 36.6 s)
+## Reel time table (total about 36.9 s)
 
-Loader about 2.85 s (shutter) · Hero 9.4 (five clips, hook fully visible at 1.6 s from page load) · Wipe 1.2 · Rooms 1.6 + 2.0 hold (1 hover stop) · Services 1.6 + 0.8 · Gear 1.6 + 2.8 (3 hover stops) · Sessions 4.0 + 1.2 (record sleeve slide + needle) · Booking 1.4 + 3.4 (hold + tick) · Footer 2.0 + 0.8. `meta.record.duration` = 34. Measured: record clock 33.8 s after the loader, last scroll move at 35.85 s, page ends at about 36.6 s. Hand-scrolled in practice; every part works at any speed.
+Loader gone at about 1.3 s from page load (shutter seam opens at about 0.8 s) · Hero 9.4 + 1.35 hold (hook types in from 0.8 s, fully visible at about 1.3 s) · Wipe 1.2 · Rooms 1.6 + 2.0 hold (1 hover stop) · Services 1.6 + 0.8 · Gear 1.6 + 2.8 (3 hover stops) · Sessions 4.0 + 1.2 · Booking 1.4 + 3.4 · Footer 2.0 + 1.5. Measured from load: last scroll move 35.4 s, end of footer about 36.9 s. Hand-scrolled in practice; every part works at any speed.
 
 ## Clip table (video-first)
 
