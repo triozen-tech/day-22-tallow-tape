@@ -27,7 +27,7 @@ Every motion is a pure function of scroll position (any speed, forward and back)
 |---|---|---|---|---|---|
 | 0 | Loader | I29 | I29 | Shutter seam opens on the first frame of V1 | 1.2 s |
 | 1 | Nav | NV09 | M276 | Rail labels roll to a twin on hover/active; REC dot blinks | always on |
-| 2 | Hero · glide | HR28 (full-height film) | M370 + hook M134 | Hook "Studios: this is your website." sweeps in left to right in the first 2 s (before/with title); the title STUDIOS SOUND / LIKE THIS. then splits apart to the sides as the film pushes on | 9.0 s |
+| 2 | Hero · glide | HR28 (full-height film) | M370 + hook M134 | Hook "Studios: this is your website." sweeps in left to right in the first 2 s (before/with title); the title STUDIOS SOUND / LIKE THIS. then both lines rise together and fade out over the last 15% of their travel, before the top HUD | 9.0 s |
 | 3 | Rooms | GL09 | M257 | Three-panel accordion: hovered/active room opens wide, the others fold to vertical labels; the lamp swells | 4.0 s |
 | 4 | Services + process | PD08 | M425 | Numbered rail; each step number and title mask in with scroll, price slides | 3.5 s |
 | 5 | Gear | PS22 | M211 | Tile wall rises in a corner-to-corner wave; hovered tile floods lamp-yellow with name + year | 5.0 s |
@@ -49,9 +49,9 @@ Transitions: X34 kinetic type wipe (hero → rooms), X96 not used. Only one seam
 - **Hook line**: "Studios: this is your website." (M134 typed wipe under the title).
 - Engine fix found on this build: `FrameScrub` now restarts any layer's clip that was dropped while far away (jumping back from the end of the hero no longer leaves a blank canvas).
 
-## Reel time table (total about 36.9 s)
+## Reel time table (total about 36.5 s)
 
-Loader gone at about 1.3 s from page load (shutter seam opens at about 0.8 s) · Hero 9.4 + 1.35 hold (hook types in from 0.8 s, fully visible at about 1.3 s) · Wipe 1.2 · Rooms 1.6 + 2.0 hold (1 hover stop) · Services 1.6 + 0.8 · Gear 1.6 + 2.8 (3 hover stops) · Sessions 4.0 + 1.2 · Booking 1.4 + 3.4 · Footer 2.0 + 1.5. Measured from load: last scroll move 35.4 s, end of footer about 36.9 s. Hand-scrolled in practice; every part works at any speed.
+Record only: hero held still until 3.2 s from page load (hook types from about 0.9 s, fully visible about 1.2 s to 3.2 s), then scroll starts · Hero 9.0 + 0.5 hold · Wipe 1.2 · Rooms 1.6 + 2.0 hold (1 hover stop) · Services 1.6 + 0.8 · Gear 1.6 + 2.4 (3 hover stops) · Sessions 4.0 + 1.2 · Booking 1.4 + 3.0 · Footer 2.0 + 0.8. Measured from load: total about 36.4 to 36.7 s. Real visitors scroll themselves; none of this hold applies outside `?record=1`.
 
 ## Clip table (video-first)
 
