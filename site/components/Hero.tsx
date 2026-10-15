@@ -10,7 +10,7 @@ import { bars, sstep } from "./hooks";
 const HOLD = 520; // px the last frame (the mic) rests before Rooms
 const METER = bars(9, 4);
 
-/** HR28 hero: the glide through the studio (V1..V5 on one scroll). Title splits apart (M370), hook line sweeps in (M134). */
+/** HR28 hero: the glide through the studio (V1..V5 on one scroll). Title lines rise together (M370), hook line sweeps in (M134). */
 export default function Hero() {
   const top = useRef<HTMLDivElement>(null);
   const bot = useRef<HTMLDivElement>(null);
@@ -28,8 +28,8 @@ export default function Hero() {
     const s = sstep(0.0, 0.14, q);
     const fade = still ? 1 : 1 - sstep(0.14, 0.2, q);
     if (top.current) { top.current.style.transform = `translateY(${(-s * 0.4 * vh).toFixed(1)}px)`; top.current.style.opacity = String(fade); }
-    if (bot.current) { bot.current.style.transform = `translateY(${(s * 0.4 * vh).toFixed(1)}px)`; bot.current.style.opacity = String(fade); }
-    if (hookEl.current) hookEl.current.style.opacity = String(still ? 1 : 1 - sstep(0.3, 0.38, p));
+    if (bot.current) { bot.current.style.transform = `translateY(${(-s * 0.4 * vh).toFixed(1)}px)`; bot.current.style.opacity = String(fade); }
+    if (hookEl.current) hookEl.current.style.opacity = String(still ? 1 : 1 - sstep(0.0, 0.03, p));
     if (hint.current) hint.current.style.opacity = String(still ? 0 : 1 - sstep(0.0, 0.03, p));
     let i = 0;
     CLIP_AT.forEach((a, k) => { if (p >= a - 0.004) i = k; });
