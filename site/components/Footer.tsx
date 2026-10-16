@@ -61,7 +61,7 @@ export default function Footer() {
       <div ref={dim} className="pointer-events-none absolute inset-0 bg-black" style={{ opacity: 0 }} />
       <div className="mono cap relative z-10 flex h-[72px] items-center justify-between border-t border-line bg-bg px-12 text-fg">
         <span>{footer.note}</span>
-        <span className="hidden text-muted lg:block">{hook}</span>
+        <span className="hidden text-fg/80 lg:block">{hook}</span>
         <span>{footer.hours}</span>
       </div>
     </footer>

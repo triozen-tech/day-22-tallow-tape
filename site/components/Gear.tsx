@@ -23,7 +23,7 @@ export default function Gear() {
     <section id="gear" data-record-time="1.6" data-record-hold="2.4" data-record-align="center" data-record-label="gear" className="pl-rail bg-bg">
       <div className="flex items-end justify-between px-12 pb-6 pt-10">
         <h2 className="font-display text-[130px] leading-[0.86] text-fg">The gear.</h2>
-        <div className="mono cap pb-3 text-muted">18 pieces · 8 shown · hover any</div>
+        <div className="mono cap pb-3 text-muted">8 pieces · hover any</div>
       </div>
       <div ref={wall} className="grid grid-cols-4 border-l border-t border-line">
         {gear.map((g, i) => (
